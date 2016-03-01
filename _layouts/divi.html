@@ -51,7 +51,12 @@ layout: bare
   <!-- page container -->
   <div id="page-container">
     <!-- Begin header -->
-    {% include header.html %}
+      <div id="top-header">
+        {% include top_header.html %}
+      </div>
+      <header id="main-header">
+        {% include main_header.html %}
+      </header>
     <!-- END Header -->
 
     {{ content }}
