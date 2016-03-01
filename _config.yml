@@ -16,7 +16,7 @@ header_type: 'default'
 # Boxed layout : true or false
 boxed_layout: false
 # Logo url : url (if not is set load default logo /assets/img/logo.png)
-logo_url: 'http://www.universaal.info/wp-content/uploads/logo.png';
+logo_url: 'http://www.universaal.info/wp-content/uploads/logo.png'
 
 ##########
 # Social #
