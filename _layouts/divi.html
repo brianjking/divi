@@ -20,7 +20,7 @@ layout: bare
 
   <!--Divi custom styling-->
   <link rel="stylesheet" href="{{ page.leadingpath }}assets/css/custom.css" type="text/css" />
-  
+
   <!--Divi custom JS-->
   <script src="{{ page.leadingpath }}assets/js/custom.js"></script>
 
@@ -28,11 +28,24 @@ layout: bare
 </head>
 
 <body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
+  <!-- page container -->
   {% include header.html %}
 
   {{ content }}
 
   {% include footer.html %}
+  <!-- End page container -->
+
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/includes/builder/scripts/frontend-builder-global-functions.js'></script>
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/includes/builder/scripts/jquery.mobile.custom.min.js'></script>
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/js/custom.js'></script>
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/js/smoothscroll.js'></script>
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/includes/builder/scripts/jquery.fitvids.js'></script>
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/includes/builder/scripts/waypoints.min.js'></script>
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/includes/builder/scripts/jquery.magnific-popup.js'></script>
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/includes/builder/scripts/frontend-builder-scripts.js'></script>
+<script type='text/javascript' src='{{ page.leadingpath }}assets/vendor/divi/2.6.4.4/includes/builder/scripts/jquery.easypiechart.js'></script>
+
 </body>
 
 </html>
