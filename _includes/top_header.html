@@ -39,28 +39,33 @@
    <!-- #et-info -->
    <div id="et-secondary-menu">
       <div class="et_duplicate_social_icons">
-         <ul class="et-social-icons">
-            <li class="et-social-icon et-social-facebook">
-               <a href="#" class="icon">
-               <span>Facebook</span>
-               </a>
-            </li>
-            <li class="et-social-icon et-social-twitter">
-               <a href="#" class="icon">
-               <span>Twitter</span>
-               </a>
-            </li>
-            <li class="et-social-icon et-social-google-plus">
-               <a href="#" class="icon">
-               <span>Google</span>
-               </a>
-            </li>
-            <li class="et-social-icon et-social-rss">
-               <a href="http://www.elegantthemes.com/preview/Divi/feed/" class="icon">
-               <span>RSS</span>
-               </a>
-            </li>
-         </ul>
+	      <ul class="et-social-icons">
+
+	      	{% if site.facebook_url %}
+	      	<li class="et-social-icon et-social-facebook">
+				<a href="{{site.facebook_url}}" class="icon">
+				<span>Facebook</span>
+				</a>
+			</li>
+			{% endif %}
+
+	      	{% if site.twitter_url %}
+			<li class="et-social-icon et-social-twitter">
+				<a href="{{site.twitter_url}}" class="icon">
+				<span>Twitter</span>
+				</a>
+			</li>
+			{% endif %}
+			
+	      	{% if site.google_url %}
+			<li class="et-social-icon et-social-google-plus">
+				<a href="{{site.google_url}}" class="icon">
+				<span>Google</span>
+				</a>
+			</li>
+			{% endif %}
+
+	      </ul>
       </div>
       <ul id="et-secondary-nav" class="menu">
          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5707">
@@ -72,12 +77,7 @@
                <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-5714"><a href="http://www.elegantthemes.com/preview/Divi/product-category/outdoors/">Outdoors</a></li>
             </ul>
          </li>
-         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5706"><a href="http://www.elegantthemes.com/preview/Divi/my-account/">My Account</a></li>
-         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5709"><a href="http://www.elegantthemes.com/preview/Divi/checkout/">Checkout</a></li>
-      </ul>
-      <a href="http://www.elegantthemes.com/preview/Divi/cart/" class="et-cart-info">
-      <span>0 Items</span>
-      </a>				
+      </ul>			
    </div>
    <!-- #et-secondary-menu -->
 </div>
