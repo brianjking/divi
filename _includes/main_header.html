@@ -2,10 +2,10 @@
    <div class="logo_container">
       <span class="logo_helper"></span>
       <a href="http://www.elegantthemes.com/preview/Divi/">
-         {% if page.logo_url %}
-         <img src="{{ page.logo_url }}" {% if page.name %} alt="Logo {{page.name}}"{% endif %} id="logo"> 
+         {% if site.logo_url %}
+         <img src="{{ site.logo_url }}" {% if site.name %} alt="Logo {{site.name}}"{% endif %} id="logo"> 
          {% else %}
-         <img src="{{ page.leadingpath }}assets/img/logo.png" {% if page.name %} alt="Logo {{page.name}}"{% endif %} id="logo">
+         <img src="{{ page.leadingpath }}assets/img/logo.png" {% if site.name %} alt="Logo {{site.name}}"{% endif %} id="logo">
          {% endif %}
       </a>
    </div>
