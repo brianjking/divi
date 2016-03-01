@@ -1,0 +1,31 @@
+---
+layout: bare
+---
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{% if page.title %}{{ page.title }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{{ page.leadingpath }}_stylesheets/page.css">
+
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!--Divi custom styling-->
+  <link rel="stylesheet" href="{{ page.leadingpath }}assets/css/custom.css" type="text/css" />
+
+  <!--Divi custom JS-->
+  <script src="{{ page.leadingpath }}assets/js/custom.js"></script>
+
+  {% include analytics.html %}
+</head>
+
+<body {% if page.body_class %}class="{{ page.body_class }}"{% endif %}>
+  {% include header.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+</body>
+
+</html>
