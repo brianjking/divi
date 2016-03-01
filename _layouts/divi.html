@@ -52,19 +52,24 @@ layout: bare
   <!-- page container -->
   <div id="page-container">
     <!-- Begin header -->
-      <div id="top-header">
-        {% include top_header.html %}
-      </div>
-      <header id="main-header">
-        {% include main_header.html %}
-      </header>
+    <div id="top-header">
+      {% include top_header.html %}
+    </div>
+    <header id="main-header">
+      {% include main_header.html %}
+    </header>
     <!-- END Header -->
 
-    {{ content }}
-
-    <!-- Begin footer -->
-    {% include footer.html %}
-    <!-- END Footer --> 
+    <div id="et-main-area">
+      <div id="main-content">
+        {{ content }}
+      </div>
+      <div id="main-footer">
+        <!-- Begin footer -->
+        {% include footer.html %}
+        <!-- END Footer -->
+      </div>
+    </div>
   </div>
   <!-- END page container -->
 
