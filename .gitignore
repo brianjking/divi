@@ -40,6 +40,5 @@ Thumbs.db
 ###############################
 /assets/vendor/divi/**/*.php
 /assets/vendor/divi/**/*.xml
-/assets/vendor/divi/*/includes/
 /assets/vendor/divi/*/lang/
 /assets/vendor/divi/*/psd/
