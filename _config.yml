@@ -1,0 +1,18 @@
+###########
+# General #
+###########
+name: 'Divi'
+description: 'Website desc.'
+url: 'http://yourdomain.io'
+
+
+###############
+# Divi config #
+###############
+
+# Header mode : default, center or vertical
+header_type: 'center'
+# Boxed layout : true or false
+header_dark: false
+# Boxed layout : true or false
+boxed_layout: false
