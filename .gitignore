@@ -43,3 +43,5 @@ Thumbs.db
 /assets/vendor/divi/*/includes/
 /assets/vendor/divi/*/lang/
 /assets/vendor/divi/*/psd/
+/assets/vendor/divi/*/epanel/
+!/assets/vendor/divi/*/epanel/css/
