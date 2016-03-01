@@ -11,8 +11,6 @@ url: 'http://yourdomain.io'
 ###############
 
 # Header mode : default, center or vertical
-header_type: 'vertical'
+header_type: 'default'
 # Boxed layout : true or false
-header_dark: false
-# Boxed layout : true or false
-boxed_layout: false
+boxed_layout: true
