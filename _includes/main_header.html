@@ -2,7 +2,11 @@
    <div class="logo_container">
       <span class="logo_helper"></span>
       <a href="http://www.elegantthemes.com/preview/Divi/">
-      <img src="http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/05/divi-logo-salmon.png" alt="Divi 2.5" id="logo">
+         {% if page.logo_url %}
+         <img src="{{ page.logo_url }}" {% if page.name %} alt="Logo {{page.name}}"{% endif %} id="logo"> 
+         {% else %}
+         <img src="{{ page.leadingpath }}assets/img/logo.png" {% if page.name %} alt="Logo {{page.name}}"{% endif %} id="logo">
+         {% endif %}
       </a>
    </div>
    <div id="et-top-navigation">

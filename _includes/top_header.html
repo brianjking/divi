@@ -1,16 +1,16 @@
 <div class="container clearfix">
    <div id="et-info">
-      {% if site.phone != null %}
+      {% if site.phone %}
       	<span id="et-info-phone">{{site.phone}}</span>
       {% endif %}
 
-      {% if site.email != null %}
+      {% if site.email %}
       <a href="mailto:{{site.email}}"><span id="et-info-email">{{site.email}}</span></a>
       {% endif %} 
       
       <ul class="et-social-icons">
 
-      	{% if site.facebook_url != null %}
+      	{% if site.facebook_url %}
       	<li class="et-social-icon et-social-facebook">
 			<a href="{{site.facebook_url}}" class="icon">
 			<span>Facebook</span>
@@ -18,7 +18,7 @@
 		</li>
 		{% endif %}
 
-      	{% if site.twitter_url != null %}
+      	{% if site.twitter_url %}
 		<li class="et-social-icon et-social-twitter">
 			<a href="{{site.twitter_url}}" class="icon">
 			<span>Twitter</span>
@@ -26,7 +26,7 @@
 		</li>
 		{% endif %}
 		
-      	{% if site.google_url != null %}
+      	{% if site.google_url %}
 		<li class="et-social-icon et-social-google-plus">
 			<a href="{{site.google_url}}" class="icon">
 			<span>Google</span>
