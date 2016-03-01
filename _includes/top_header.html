@@ -1,28 +1,39 @@
 <div class="container clearfix">
    <div id="et-info">
-      <span id="et-info-phone">888-443-2342</span>
-      <a href="mailto:contact@ourwebsite.com"><span id="et-info-email">contact@ourwebsite.com</span></a>
+      {% if site.phone != null %}
+      	<span id="et-info-phone">{{site.phone}}</span>
+      {% endif %}
+
+      {% if site.email != null %}
+      <a href="mailto:{{site.email}}"><span id="et-info-email">{{site.email}}</span></a>
+      {% endif %} 
+      
       <ul class="et-social-icons">
-         <li class="et-social-icon et-social-facebook">
-            <a href="#" class="icon">
-            <span>Facebook</span>
-            </a>
-         </li>
-         <li class="et-social-icon et-social-twitter">
-            <a href="#" class="icon">
-            <span>Twitter</span>
-            </a>
-         </li>
-         <li class="et-social-icon et-social-google-plus">
-            <a href="#" class="icon">
-            <span>Google</span>
-            </a>
-         </li>
-         <li class="et-social-icon et-social-rss">
-            <a href="http://www.elegantthemes.com/preview/Divi/feed/" class="icon">
-            <span>RSS</span>
-            </a>
-         </li>
+
+      	{% if site.facebook_url != null %}
+      	<li class="et-social-icon et-social-facebook">
+			<a href="{{site.facebook_url}}" class="icon">
+			<span>Facebook</span>
+			</a>
+		</li>
+		{% endif %}
+
+      	{% if site.twitter_url != null %}
+		<li class="et-social-icon et-social-twitter">
+			<a href="{{site.twitter_url}}" class="icon">
+			<span>Twitter</span>
+			</a>
+		</li>
+		{% endif %}
+		
+      	{% if site.google_url != null %}
+		<li class="et-social-icon et-social-google-plus">
+			<a href="{{site.google_url}}" class="icon">
+			<span>Google</span>
+			</a>
+		</li>
+		{% endif %}
+
       </ul>
    </div>
    <!-- #et-info -->

@@ -4,7 +4,8 @@
 name: 'Divi'
 description: 'Website desc.'
 url: 'http://yourdomain.io'
-
+email: ''
+phone: ''
 
 ###############
 # Divi config #
@@ -14,3 +15,12 @@ url: 'http://yourdomain.io'
 header_type: 'default'
 # Boxed layout : true or false
 boxed_layout: false
+# Logo url : url
+logo_url: false
+
+##########
+# Social #
+##########
+facebook_url: ''
+twitter_url: ''
+google_url: ''
