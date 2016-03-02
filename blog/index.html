@@ -40,12 +40,12 @@ body_class: blog
 
                   	{% if paginator.previous_page %}
                   	<a class="previouspostslink" rel="prev" href="{{ paginator.previous_page_path }}">«</a>
-                  	{% endif %}
+					{% endif %}
 
                  	{% if paginator.next_page %}
-						<a class="nextpostslink" rel="next" href="{% if paginator.next_page %}">»</a>
+						<a class="nextpostslink" rel="next" href="{{ paginator.next_page }}">»</a>
 					{% endif %}
-					
+
                </div>
             </div>
             <!-- .et_pb_column -->
