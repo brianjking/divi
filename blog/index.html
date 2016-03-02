@@ -36,7 +36,13 @@ body_class: blog
                </div>
                <!-- .et_pb_posts -->
                <div class="wp-pagenavi">
-                  <span class="pages">Page 1 of 2</span><span class="current">1</span><a class="page larger" href="http://www.elegantthemes.com/preview/Divi/blog-standard-no-sidebar-2/page/2/">2</a><a class="nextpostslink" rel="next" href="http://www.elegantthemes.com/preview/Divi/blog-standard-no-sidebar-2/page/2/">»</a>
+					<span class="pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+                  	{% if paginator.previous_page %}
+                  	<a class="previouspostslink" rel="prev" href="{{ paginator.previous_page_path }}">«</a>
+                  	{% endif %}
+                 	{% if paginator.next_page %}
+						<a class="nextpostslink" rel="next" href="{% if paginator.next_page %}">»</a>
+					{% endif %}
                </div>
             </div>
             <!-- .et_pb_column -->
