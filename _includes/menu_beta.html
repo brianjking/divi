@@ -83,14 +83,16 @@
 
 {% comment %} Si existen items, se imprime la lista {% endcomment %}
 
-{% unless _menu_items == "" %}
+
+{% assign _srip_items = _menu_items | strip %}
+{% unless _srip_items == "" %}
    {% if include.haschildren %}
       <ul class="sub-menu">
-         {{ _menu_items }}
+         {{ _srip_items }}
       </ul>
    {% else %}
       <ul id="top-menu" class="nav">
-         {{ _menu_items }}
+         {{ _srip_items }}
       </ul>
    {% endif %}
 {% endunless %}
