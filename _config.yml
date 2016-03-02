@@ -1,5 +1,3 @@
-safe: false
-
 menu_generator:
   css:
     current: "current"
