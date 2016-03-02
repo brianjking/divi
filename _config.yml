@@ -1,4 +1,9 @@
-
+   
+########
+# Gems #
+########
+gems:
+   - menu_generator
 
 ###########
 # General #
