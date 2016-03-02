@@ -10,6 +10,6 @@ body_class: home
    {% assign _pages = site.pages %}
    <ul>
    {% for node in _pages %}
-   	<li>node.url</li>
+   	<li> {{ node.url }}</li>
    {% endfor %}
    </ul>
