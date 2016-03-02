@@ -1,5 +1,19 @@
-	
+<!-- get pass stash -->
+{% capture _pass_stash %}
+   
+   {{ _pass_stash }}
 
+   {% if _pass_active %}
+      1
+   {% else %}
+      0
+   {% endif %}
+
+{% endcapture %}
+<!-- END get pass stash -->
+
+<!-- Set _pass_active to false -->
+{% assign _pass_active = false %}
 
 <!-- Se capturan los elementos -->
 {% capture _menu_items %}
@@ -9,8 +23,6 @@
 	{% assign _pages = _pages | sort: "url" %}
 	<!-- Se recorren las paginas que esten por debajo de la url pasada como parametro -->
 	{% for node in _pages %}
-		<!-- Me guardo el numero de vuelta (No lo utilizo de momento) -->
-		{% assign _loopindex = forloop.index %}
 		<!-- Si el titulo no existe saltamos el loop -->
 		{% unless node.title %}
 			{% continue %}
@@ -63,7 +75,7 @@
 			{% endunless %}
 		{% endif %}
 
-
+		{% assign _retval = false %}
 		<!-- initialize submenu value -->
 		{% assign _childmenu = "" %}
 
@@ -76,7 +88,22 @@
 
 		<!-- Genero las clases para este elemento --> <!-- TO DO -->
 		{% capture _classes %}
-
+			{% if page.url == node.url %}
+				selected{{ " " }}
+			{% elsif _retval %}
+				active{{ " " }}
+			{% endif %}
+         
+			{% if _childmenu != "" %}
+				branch{{ " " }}
+				{% if _retval or page.url == node.url or include.all %}
+            		open
+            	{% else %}
+            		closed
+            	{% endif %}
+         	{% else %}
+            	leaf
+         	{% endif %}
 		{% endcapture %}
 
 		<!-- Genero el elemento li -->
@@ -84,8 +111,13 @@
 			<a href="{{ site.baseurl }}{{ node.url }}">
 				{{ node.title | escape }}
          	</a>
-         	<!--childmenu -->
-         	{{ _childmenu }}
+			{% if _retval or page.url == node.url or include.all %}
+				{{ _childmenu }}
+			{% endif %}
+
+			{% if _retval or page.url == node.url %}
+				{% assign _pass_active = true %}
+			{% endif %}
         </li>
 
    	{% endfor %}
@@ -97,3 +129,16 @@
       {{ _menu_items }}
    </ul>
 {% endunless %}
+
+{% assign _retval = _pass_active %}
+{% assign _tmp = _pass_stash | split: "" | last %}
+
+{% if _tmp == "1" %}
+   {% assign _pass_active = true %}
+{% else %}
+   {% assign _pass_active = false %}
+{% endif %}
+
+{% assign _tmp = _pass_stash.size | minus: 1 %}
+{% assign _pass_stash = _pass_stash | truncate: _tmp, "" %}
+
