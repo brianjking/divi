@@ -27,7 +27,7 @@ body_class: blog
          <div class=" et_pb_row et_pb_row_0">
             <div class="et_pb_column et_pb_column_4_4  et_pb_column_0">
                <div class="et_pb_posts et_pb_module et_pb_bg_layout_light  et_pb_blog_0">
-					{% for post in site.posts %}
+					{% for post in paginator.posts %}
 						<article lass="et_pb_post post type-post status-publish hentry">
 							<h2 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
 							<p>{{ post.excerpt }}</p>
@@ -38,6 +38,14 @@ body_class: blog
                <div class="wp-pagenavi">
 					<span class="pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
+                  	{% if paginator.previous_page %}
+                  	<a class="previouspostslink" rel="prev" href="{{ paginator.previous_page_path }}">«</a>
+                  	{% endif %}
+
+                 	{% if paginator.next_page %}
+						<a class="nextpostslink" rel="next" href="{% if paginator.next_page %}">»</a>
+					{% endif %}
+					
                </div>
             </div>
             <!-- .et_pb_column -->
