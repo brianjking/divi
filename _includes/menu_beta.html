@@ -33,6 +33,13 @@
 		{% unless include.url == _url_start %}
 			{% continue %}
 		{% endunless %}
+		<!-- si la url no tiene "/" se la añadimos siempre que no sea la raiz -->
+		{% unless include.url == "/" %}
+			{% assign _fixUrlLastChar = _url_start | split: "" | last %}
+			{% unless _fixUrlLastChar == "/" %}
+				{% assign _url_start = _url_start | append:'/'  %}
+			{% endunless %}
+		{% endunless %}
 		<!-- Elimino la url de inicio para este nodo quedandome solo con el final de la url que no coincide -->
 		{% assign _url_rest = node.url | remove_first: _url_start %}
 		<!-- Me guardo el numero de "/" de la url sobrante -->		
