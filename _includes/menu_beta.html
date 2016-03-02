@@ -49,8 +49,8 @@
    {% assign _url_rest_size = _url_rest | split: "/" | size %}
 
    {% comment %} Excluir las paginas generadas por paginacion el la vista del blog {% endcomment %}
-   {% assign _have_pagination = _url_rest | split: "/page-" | size %}
-   {% if _have_pagination >= 1 %}
+   {% assign _have_pagination = node.url | split: "/page-" | size %}
+   {% if _have_pagination != 0 %}
       {% continue %}
    {% endif %}
 
