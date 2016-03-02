@@ -109,9 +109,10 @@
 		<!-- Genero el elemento li -->
 		<li class="{{ _classes }}">
 			<a href="{{ site.baseurl }}{{ node.url }}">
-				{{ node.title | escape }}
+				<!-- {{ node.title | escape }} -->
+				{{include.url}}
          	</a>
-         	
+
 			{{ _childmenu }}
 
 			{% if _retval or page.url == node.url %}
