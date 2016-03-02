@@ -37,15 +37,15 @@ body_class: blog
                </div>
                <!-- .et_pb_posts -->
                <div class="wp-pagenavi">
-					<span class="pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-
-                  	{% if paginator.previous_page %}
-                  	<a class="previouspostslink" rel="prev" href="/divi/blog/page-{{ paginator.previous_page }}">«</a>
+                  <span class="pages" style="float: left;">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+               
+               {% if paginator.previous_page %}
+                  <a class="previouspostslink" rel="prev" href="/divi/blog/page-{{ paginator.previous_page }}">«</a>
 					{% endif %}
 					
 					{% for page in (1..paginator.total_pages) %}
 						{% if page == paginator.page %}
-							<em>{{ page }}</em>
+							<a href="#">{{ page }}</a>
 						{% elsif page == 1 %}
 							<a href="/divi/blog/">{{ page }}</a>
 						{% else %}
