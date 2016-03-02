@@ -43,7 +43,7 @@
 				{% continue %}
 			{% endunless %}
 		<!-- Si el conteo de las "/" en la url sobrante es dos -->
-		{% elsif _url_rest_size == 2 %}
+		{% elsif _url_rest_size == 3 %}
 			<!-- Genero un array con _url_rest y me guardo el ultimo elemento (que equivale con el nombre de la vista) -->
 			{% assign _filename = _url_rest | split: "/" | last %}
 			<!-- Me guardo el posible "index." en una variable (Los 6 primeros caracteres) -->
@@ -84,7 +84,7 @@
 			<a href="{{ site.baseurl }}{{ node.url }}">
 				{{ node.title | escape }}
          	</a>
-         	{{_url_rest_size}}
+         	{{ _childmenu }}
         </li>
 
    	{% endfor %}
