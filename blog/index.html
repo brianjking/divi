@@ -49,7 +49,7 @@ body_class: blog
 					
 					{% for page in (1..paginator.total_pages) %}
 						{% if page == paginator.page %}
-							<a href="#">{{ page }}</a>
+							<a >{{ page }}</a>
 						{% elsif page == 1 %}
 							<a href="{{site.baseurl}}{{ site.paginate_path | replace: 'page-:num/', '' }}">{{ page }}</a>
 						{% else %}
