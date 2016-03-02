@@ -33,8 +33,8 @@ layout: bare
   page-template-default 
   custom-background 
   et_pb_button_helper_class
-  {% if site.header_type == 'vertical' %}  et_vertical_nav et_vertical_fixed  {% else %}  et_fixed_nav  {% endif %}   
-  {% if site.boxed_layout == true %}  et_boxed_layout  {% endif %}   
+  {% if page.header_type == 'vertical' %}  et_vertical_nav et_vertical_fixed  {% else %}  et_fixed_nav  {% endif %}   
+  {% if page.boxed_layout == true %}  et_boxed_layout  {% endif %}   
   et_show_nav 
   et_cover_background 
   et_secondary_nav_enabled 
@@ -45,7 +45,7 @@ layout: bare
   et_primary_nav_dropdown_animation_fade 
   et_secondary_nav_dropdown_animation_fade 
   et_pb_footer_columns4
-  {% if site.header_type == 'center' %}  et_header_style_centered  {% else %}  et_header_style_left  {% endif %}
+  {% if page.header_type == 'center' %}  et_header_style_centered  {% else %}  et_header_style_left  {% endif %}
   et_pb_pagebuilder_layout 
   et_right_sidebar
   ">
