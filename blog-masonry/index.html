@@ -1,0 +1,64 @@
+---
+layout: divi
+sidebar: false
+header_type: 'default'
+boxed_layout: false
+title: Blog masonry
+body_class: blog-masonry
+---
+
+<article class="page type-page status-publish hentry">
+   <div class="entry-content">
+      <div class="et_pb_section et_pb_section_parallax et_pb_fullwidth_section  et_pb_section_0 et_pb_with_background et_section_regular">
+         <div class="et_parallax_bg" style="height: 268.5px; transform: translate(0px, 52.5px); background-image: url(&quot;http://elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/geometic-bg-salmon.jpg&quot;);"></div>
+         <section class="et_pb_fullwidth_header et_pb_module et_pb_bg_layout_dark et_pb_text_align_left  et_pb_fullwidth_header_0">
+            <div class="et_pb_fullwidth_header_container left">
+               <div class="header-content-container center">
+                  <div class="header-content">
+                     <h1>Masonry Blog Layout</h1>
+                     <span class="et_pb_fullwidth_header_subhead">The latest and greatest web design news.</span>
+                  </div>
+               </div>
+            </div>
+            <div class="et_pb_fullwidth_header_overlay"></div>
+            <div class="et_pb_fullwidth_header_scroll"></div>
+         </section>
+      </div>
+      <!-- .et_pb_section -->
+      <div class="et_pb_section  et_pb_section_1 et_pb_with_background et_section_regular">
+         <div class=" et_pb_row et_pb_row_0">
+            <div class="et_pb_column et_pb_column_4_4  et_pb_column_0">
+               <div class="et_pb_blog_grid_wrapper">
+                  <div class="et_pb_blog_grid clearfix et_pb_module et_pb_bg_layout_light  et_pb_blog_0" data-columns="3">
+
+					{% for post in paginator.posts %}
+					
+                     <div class="column size-1of3">
+                        <article class="et_pb_post post type-post status-publish format-standard has-post-thumbnail hentry category-photography">
+                           <div class="et_pb_image_container">
+							<a href="http://www.elegantthemes.com/preview/Divi/rocky-formations/" class="entry-featured-image-url">
+                              <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/dessert-rocks-400x250.jpg" alt="Rocky Formations" width="400" height="250">															</a>
+                           </div>
+                           <!-- .et_pb_image_container -->
+                           <h2 class="entry-title"><a href="http://www.elegantthemes.com/preview/Divi/rocky-formations/">{{ post.title }}</a></h2>
+                           <p class="post-meta">by <span class="author vcard"><a href="http://www.elegantthemes.com/preview/Divi/author/admin/" title="Posts by Nick">Nick</a></span>  |  <span class="published">May 9, 2014</span>  |  <a href="http://www.elegantthemes.com/preview/Divi/category/photography/" rel="category tag">Photography</a>  </p>
+                           <p>{{ post.excerpt }}</p>
+                        </article>                        
+                     </div>
+
+					{% endfor %}
+
+
+
+                  </div>
+                  <!-- .et_pb_posts -->
+               </div>
+            </div>
+            <!-- .et_pb_column -->
+         </div>
+         <!-- .et_pb_row -->
+      </div>
+      <!-- .et_pb_section -->
+   </div>
+   <!-- .entry-content -->
+</article>
