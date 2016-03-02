@@ -51,8 +51,8 @@
    {% comment %} Excluir las paginas generadas por paginacion el la vista del blog {% endcomment %}
    {% assign _childmenu = 0 %}
    {% assign _have_pagination = node.url | split: "/page-" | size %}
-   {% if _have_pagination == 0 %}
-      
+   {% if _have_pagination == 2 %}
+      {% continue %}
    {% endif %}
 
    {% comment %} Guardo el ultimo caracter de la url {% endcomment %}
