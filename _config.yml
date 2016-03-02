@@ -1,6 +1,7 @@
 ###########
 # General #
 ###########
+baseurl: '/divi/'
 name: 'Divi'
 description: 'Website desc.'
 url: 'http://yourdomain.io'
