@@ -28,7 +28,7 @@
 			{% continue %}
 		{% endunless %}
 		<!-- Para este elemento (node) corto su URL con el tamaño de la url pasada por parametro y optengo una url de inicio -->
-		{% assign _url_start = node.url | truncate: include.url.size+1, "" %}
+		{% assign _url_start = node.url | truncate: include.url.size, "" %}
 		<!-- Si mi url de inicio no es igual a la url pasada por parametro saltare el loop -->
 		{% unless include.url == _url_start %}
 			{% continue %}
@@ -111,7 +111,7 @@
 			<a href="{{ site.baseurl }}{{ node.url }}">
 				{{ node.title | escape }}
          	</a>
-			{{_url_start}}
+         	
 			{{ _childmenu }}
 
 			{% if _retval or page.url == node.url %}
