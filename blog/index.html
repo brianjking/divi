@@ -38,14 +38,14 @@ body_class: blog
 					<span class="pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
                   	{% if paginator.previous_page %}
-                  	<a class="previouspostslink" rel="prev" href="{{ paginator.previous_page | prepend: site.baseurl | replace: '//', '/' }}">«</a>
+                  	<a class="previouspostslink" rel="prev" href="/divi/blog/page-{{ paginator.previous_page }}">«</a>
 					{% endif %}
 					
 					{% for page in (1..paginator.total_pages) %}
 						{% if page == paginator.page %}
 							<em>{{ page }}</em>
 						{% elsif page == 1 %}
-							<a href="{{ paginator.previous_page_path }}">{{ page }}</a>
+							<a href="/divi/blog/page-{{page}}">{{ page }}</a>
 						{% else %}
 							<a href="/divi/blog/page-{{page}}">{{ page }}</a>
 						{% endif %}
