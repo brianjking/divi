@@ -10,6 +10,11 @@
       </a>
    </div>
    <div id="et-top-navigation">
+
+      <nav id="top-menu-nav">
+      {% include menu.html menu=site.menu %}
+      </nav>
+      
       <!--
       <nav id="top-menu-nav">
          <ul id="top-menu" class="nav">
@@ -237,9 +242,6 @@
          </ul>
       </nav>
       -->
-      <nav id="top-menu-nav">
-      {% include menu.html url='/' sort='url' reverse=false all=false %}
-      </nav>
 
       <!--
       <div id="et_top_search">
