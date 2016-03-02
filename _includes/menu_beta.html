@@ -125,7 +125,7 @@
 {% endcapture %}
 
 {% comment %} Si existen items, se imprime la lista {% endcomment %}
-{% unless strip(_menu_items) == "" %}
+{% unless _menu_items == "" %}
    <ul id="top-menu" class="nav">
       {{ strip(_menu_items) }}
    </ul>
