@@ -81,14 +81,13 @@
 
 		<!-- Si no estoy en la raiz intento buscar hijos y capturar el ul generado-->
 		{% unless node.url == "/" %}
-
-			<!-- Me guardo el primer caracter -->
 			{% capture _childmenu %}
+				<!-- voy a buscar menu para  {{_nexturl}} -->
 				{% include menu_beta.html url=_nexturl %}
 			{% endcapture %}
 		{% endunless %}
 
-		<!-- Genero las clases para este elemento --> <!-- TO DO -->
+		<!-- Genero las clases para este elemento -->
 		{% capture _classes %}
 			{% if page.url == node.url %}
 				selected{{ " " }}
