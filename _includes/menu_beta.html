@@ -84,8 +84,8 @@
 			<a href="{{ site.baseurl }}{{ node.url }}">
 				{{ node.title | escape }}
          	</a>
+         	{{_url_rest_size}}
         </li>
-		{{_nexturl}}
 
    	{% endfor %}
 {% endcapture %}
