@@ -13,9 +13,9 @@ url: 'http://yourdomain.io'
 ###############
 
 # Header mode : default, center or vertical
-header_type: 'default'
+header_type: 'center'
 # Boxed layout : true or false
-boxed_layout: false
+boxed_layout: true
 # Logo url : url (if not is set load default logo /assets/img/logo.png)
 #logo_url: ''
 
