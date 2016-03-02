@@ -1,7 +1,7 @@
 ###########
 # General #
 ###########
-baseurl: '/divi/'
+baseurl: 'http://chlogon.github.io/divi'
 name: 'Divi'
 description: 'Website desc.'
 url: 'http://yourdomain.io'
@@ -27,4 +27,4 @@ boxed_layout: true
 #google_url: ''
 
 paginate: 2
-paginate_path: "blog/page-:num/"
+paginate_path: "/blog/page-:num/"
