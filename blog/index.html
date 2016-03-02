@@ -39,11 +39,11 @@ body_class: blog
 					<span class="pages">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
                   	{% if paginator.previous_page %}
-                  	<a class="previouspostslink" rel="prev" href="{{ paginator.previous_page_path }}">«</a>
+                  	<a class="previouspostslink" rel="prev" href="/divi/blog/page{{ paginator.previous_page_path }}">«</a>
 					{% endif %}
 
                  	{% if paginator.next_page %}
-						<a class="nextpostslink" rel="next" href="{{ paginator.next_page }}">»</a>
+						<a class="nextpostslink" rel="next" href="/divi/blog/page{{ paginator.next_page }}">»</a>
 					{% endif %}
 
                </div>
