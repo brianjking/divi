@@ -1,0 +1,98 @@
+	
+
+
+<!-- Se capturan los elementos -->
+{% capture _menu_items %}
+	<!-- Listado paginas disponibles -->
+	{% assign _pages = site.pages %}
+	<!-- Se ordenan por la URL -->
+	{% assign _pages = _pages | sort: "url" %}
+	<!-- Se recorren las paginas que esten por debajo de la url pasada como parametro -->
+	{% for node in _pages %}
+		<!-- Me guardo el numero de vuelta (No lo utilizo de momento) -->
+		{% assign _loopindex = forloop.index %}
+		<!-- Si el titulo no existe saltamos el loop -->
+		{% unless node.title %}
+			{% continue %}
+		{% endunless %}
+		<!-- Para este elemento (node) corto su URL con el tamaño de la url pasada por parametro y optengo una url de inicio -->
+		{% assign _url_start = node.url | truncate: include.url.size, "" %}
+		<!-- Si mi url de inicio no es igual a la url pasada por parametro saltare el loop -->
+		{% unless include.url == _url_start %}
+			{% continue %}
+		{% endunless %}
+		<!-- Elimino la url de inicio para este nodo quedandome solo con el final de la url que no coincide -->
+		{% assign _url_rest = node.url | remove_first: _url_start %}
+		<!-- Me guardo el numero de "/" de la url sobrante -->		
+		{% assign _url_rest_size = _url_rest | split: "/" | size %}
+		<!-- Guardo el ultimo caracter de la url -->
+		{% assign _lastchar = node.url | split: "" | last %}
+		<!-- Me guardo la siguiente url a buscar -->
+		{% assign _nexturl = node.url %}
+
+		<!-- Si el conteo de las "/" en la url sobrante es cero -->
+		{% if _url_rest_size == 0 %}
+			<!-- Solo puede valer 0 si es la raiz de lo contrario salto el loop -->
+			{% unless include.url == "/" %}
+				{% continue %}
+			{% endunless %}
+		<!-- Si el ultimo caracter es "/" -->
+		{% elsif _lastchar == "/" %}
+			<!-- Si el conteo de las "/" en la url sobrante no es igual a uno (Significa que no tiene hijos) -->
+			{% unless _url_rest_size == 1 %}
+				{% continue %}
+			{% endunless %}
+		<!-- Si el conteo de las "/" en la url sobrante es dos -->
+		{% elsif _url_rest_size == 2 %}
+			<!-- Genero un array con _url_rest y me guardo el ultimo elemento (que equivale con el nombre de la vista) -->
+			{% assign _filename = _url_rest | split: "/" | last %}
+			<!-- Me guardo el posible "index." en una variable (Los 6 primeros caracteres) -->
+			{% assign _checkindex = _filename | truncate: 6, "" %}
+       	  	<!-- si _checkindex no es igual a "index." salto el loop -->
+			{% unless _checkindex == "index." %}
+				{% continue %}
+			{% endunless %}
+         	<!-- Se extrae el numero de caracteres que ocupa el index.* para obtener el nombre de la vista --> 
+			{% assign _nexturl = node.url.size | minus: _filename.size %}
+			{% assign _nexturl = node.url | truncate: _nexturl, "" %}
+		<!-- Si no se cumple ninguna de las anteriores -->
+		{% else %}
+			<!-- Si el conteo de las "/" en la url sobrante no es uno y la url pasada por parametro no es "/" -->
+			{% unless _url_rest_size == 1 and include.url == "/" %}
+				{% continue %}
+			{% endunless %}
+		{% endif %}
+
+
+		<!-- initialize submenu value -->
+		{% assign _submenu = "" %}
+
+		<!-- Si no estoy en la raiz intento buscar hijos y capturar el ul generado-->
+		{% unless node.url == "/" %}
+			{% capture _submenu %}
+				{% include menu_beta.html url=_nexturl %}
+			{% endcapture %}
+		{% endunless %}
+
+		<!-- Genero las clases para este elemento --> <!-- TO DO -->
+		{% capture _classes %}
+
+		{% endcapture %}
+
+		<!-- Genero el elemento li -->
+		<li class="{{ _classes }}">
+			<a href="{{ site.baseurl }}{{ node.url }}">
+				{{ node.title | escape }}
+         	</a>
+        </li>
+
+
+   	{% endfor %}
+{% endcapture %}
+
+<!-- Si existen items, se imprime la lista -->
+{% unless _menu_items == "" %}
+   <ul id="top-menu" class="nav">
+      {{ _menu_items }}
+   </ul>
+{% endunless %}

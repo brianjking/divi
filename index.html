@@ -7,11 +7,8 @@ body_class: home
 
 
 
-   {% assign _pages = site.pages %}
-   {% assign _pages = _pages | sort: "url" %}
-   <ul>
-   {% for node in _pages %}
-   	<li> {{ node.url }}</li>
-   {% endfor %}
-   </ul>
+{% include menu_beta.html url='/' %}
+
+
+
 
