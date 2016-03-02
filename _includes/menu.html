@@ -1,46 +1,68 @@
-{% capture _pass_stash %}
 
+<!-- get pass stash -->
+{% capture _pass_stash %}
+   
    {{ _pass_stash }}
+
    {% if _pass_active %}
-   1{% else %}
-   0{% endif %}
+      1
+   {% else %}
+      0
+   {% endif %}
 
 {% endcapture %}
+<!-- END get pass stash -->
 
-
+<!-- Set _pass_active to false -->
 {% assign _pass_active = false %}
 
-{% capture _menu_inside %}
 
+<!-- Get menu itema -->
+{% capture _menu_items %}
+   <!-- get pages -->
    {% assign _pages = site.pages %}
 
+   <!-- order pages -->
    {% if include.sort %}
       {% assign _pages = _pages | sort: include.sort %}
    {% else %}
       {% assign _pages = _pages | sort: "url" %}
    {% endif %}
 
+   <!-- reverse order -->
    {% if include.reverse %}
       {% assign _pages = _pages | reverse %}
    {% endif %}
 
+   <!-- foreach pages -->
    {% for node in _pages %}
       
+      <!-- if title is not set -->
       {% unless node.title %}
          {% continue %}
       {% endunless %}
       
+      <!-- get the first segment  -->
       {% assign _url_start = node.url | truncate: include.url.size, "" %}
    
+      <!-- children search -->
       {% unless include.url == _url_start %}
          {% continue %}
       {% endunless %}
 
+      <!-- exclude the first segment -->
       {% assign _url_rest = node.url | remove_first: _url_start %}
+
+      <!-- get the segments of the url -->
       {% assign _url_rest_size = _url_rest | split: "/" | size %}
+
+      <!-- get the last character of the url -->
       {% assign _lastchar = node.url | split: "" | last %}
+
+      <!-- next url -->
       {% assign _nexturl = node.url %}
       
+      <!-- if not have segments or the last char is eq "/" -->
       {% if _url_rest_size == 0 %}
          {% unless include.url == "/" %}
             {% continue %}
@@ -49,9 +71,12 @@
          {% unless _url_rest_size == 1 %}
             {% continue %}
          {% endunless %}
+
+      <!-- if have segments -->
       {% elsif _url_rest_size == 2 %}
-         
+         <!-- Set the new filename -->
          {% assign _filename = _url_rest | split: "/" | last %}
+         <!-- Set the new new index -->
          {% assign _checkindex = _filename | truncate: 6, "" %}
          
          {% unless _checkindex == "index." %}
@@ -116,9 +141,10 @@
 
 {% endcapture %}
 
-{% unless _menu_inside == "" %}
+
+{% unless _menu_items == "" %}
    <ul id="top-menu" class="nav">
-      {{ _menu_inside }}
+      {{ _menu_items }}
    </ul>
 {% endunless %}
 
