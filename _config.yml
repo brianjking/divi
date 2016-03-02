@@ -27,4 +27,4 @@ boxed_layout: false
 #google_url: ''
 
 paginate: 2
-paginate_path: "/blog/:num/"
+paginate_path: "/blog/page-:num/"
