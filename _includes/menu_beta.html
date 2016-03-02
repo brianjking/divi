@@ -127,7 +127,7 @@
    {% endcapture %}
 
    {% comment %} Genero el elemento li {% endcomment %}
-   <li class="{{ _classes }}"><a href="{{ site.baseurl }}{{ node.url }}">{{_have_pagination}}</a>
+   <li class="{{ _classes }}"><a href="{{ site.baseurl }}{{ node.url }}">{{ node.url | escape }}</a>
    {{ _childmenu }}
    {% if _retval or page.url == node.url %}{% assign _pass_active = true %}{% endif %}</li>{% endfor %}
 {% endcapture %}
