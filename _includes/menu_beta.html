@@ -65,11 +65,11 @@
 
 
 		<!-- initialize submenu value -->
-		{% assign _submenu = "" %}
+		{% assign _childmenu = "" %}
 
 		<!-- Si no estoy en la raiz intento buscar hijos y capturar el ul generado-->
 		{% unless node.url == "/" %}
-			{% capture _submenu %}
+			{% capture _childmenu %}
 				{% include menu_beta.html url=_nexturl %}
 			{% endcapture %}
 		{% endunless %}
