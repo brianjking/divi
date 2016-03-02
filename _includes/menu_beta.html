@@ -111,9 +111,8 @@
 			<a href="{{ site.baseurl }}{{ node.url }}">
 				{{ node.title | escape }}
          	</a>
-			{% if _retval or page.url == node.url or include.all %}
-				{{ _childmenu }}
-			{% endif %}
+			
+			{{ _childmenu }}
 
 			{% if _retval or page.url == node.url %}
 				{% assign _pass_active = true %}
