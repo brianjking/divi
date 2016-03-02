@@ -83,12 +83,6 @@
 		{% unless node.url == "/" %}
 
 			<!-- Me guardo el primer caracter -->
-			{% assign _fixUrlFirstChar = _nexturl | split: "" | first %}
-			<!-- Si el primer caracter es diferente de "/" -->
-			{% if _fixUrlFirstChar == "/" %}
-				{% assign _nexturl = _nexturl | replace_first:'/', 'kk' %}
-			{% endif %}
-
 			{% capture _childmenu %}
 				{% include menu_beta.html url=_nexturl %}
 			{% endcapture %}
