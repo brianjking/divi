@@ -26,5 +26,5 @@ boxed_layout: false
 #twitter_url: ''
 #google_url: ''
 
-paginate: 4
+paginate: 2
 paginate_path: "/blog/page:num/"
