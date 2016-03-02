@@ -86,7 +86,7 @@
 			{% assign _fixUrlLastChar = _nexturl | split: "" | first %}
 			<!-- Si el primer caracter es diferente de "/" -->
 			{% if _fixUrlLastChar != "/" %}
-				{% assign _url_start = _nexturl | replace_first:'/', %}
+				{% assign _nexturl = _nexturl | replace_first:'/', '' %}
 			{% endif %}
 
 			{% capture _childmenu %}
