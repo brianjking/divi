@@ -1,7 +1,7 @@
 ###########
 # General #
 ###########
-baseurl: 'http://www.chlogon.github.io/divi'
+baseurl: 'http://www.chlogon.github.io/divi/'
 name: 'Divi'
 description: 'Website desc.'
 url: 'http://yourdomain.io'
