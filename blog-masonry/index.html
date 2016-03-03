@@ -55,11 +55,30 @@ body_class: blog-masonry
 
                      {% capture _loop %}{{ _loop | plus:1 }}{% endcapture %}
 
+                     {% capture article %}
+                     <article class="et_pb_post post type-post status-publish format-standard has-post-thumbnail hentry category-photography">
+                        <div class="et_pb_image_container">
+                           <a href="http://www.elegantthemes.com/preview/Divi/rocky-formations/" class="entry-featured-image-url">
+                              <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/dessert-rocks-400x250.jpg" alt="Rocky Formations" width="400" height="250">                                            </a>
+                        </div>
+                        <h2 class="entry-title"><a href="http://www.elegantthemes.com/preview/Divi/rocky-formations/">{{ post.title }}</a></h2>
+                        <p class="post-meta">
+                           by <span class="author vcard">
+                           <a href="http://www.elegantthemes.com/preview/Divi/author/admin/" title="Posts by Nick">Nick</a></span>
+                           |  
+                           <span class="published">May 9, 2014</span>
+                           |
+                           <a href="http://www.elegantthemes.com/preview/Divi/category/photography/" rel="category tag">Photography</a>
+                        </p>
+                        <p>{{ post.excerpt }}</p>
+                     </article>
+                     {% endcapture %}
+
                      {% if _loop == '3' %}
                         {% capture _col_3 %}
                            {{ _col_3 }}
                            <!-- Col 03 : loop {{ forloop.index }} -->
-                           <p>El loop : {{_loop}}</p>
+                           {{article}}
                         {% endcapture %}
 
                      {% elsif _loop == '2' %}
@@ -67,7 +86,7 @@ body_class: blog-masonry
                         {% capture _col_2 %}
                            {{ _col_2 }}
                            <!-- Col 02 : loop {{ forloop.index }} -->
-                           <p>El loop : {{_loop}}</p>
+                           {{article}}
                         {% endcapture %}
 
                      {% else %}
@@ -75,7 +94,7 @@ body_class: blog-masonry
                         {% capture _col_1 %}
                            {{ _col_1 }}
                            <!-- Col 01 : loop {{ forloop.index }} -->
-                           <p>El loop : {{_loop}}</p>
+                           {{article}}
                         {% endcapture %}
 
                      {% endif %}
