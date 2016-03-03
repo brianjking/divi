@@ -72,8 +72,10 @@ body_class: blog-masonry
                            <span class="published">{{ post.date | date: "%D" }}</span>
                         {% endif %}
 
-                        {% if post.category > 0 %}
-                           tiene categorias
+                        {% if post.category.size > 0 %}
+                           {% for post_cat in post.category %}
+                              <a href="#category-link" rel="category tag">{{ post_cat }}</a> 
+                           {% endfor %}
                         {% endif %}
 
                         </p>
