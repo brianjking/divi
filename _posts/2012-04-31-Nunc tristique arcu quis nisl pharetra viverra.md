@@ -1,7 +1,7 @@
 ---
 excerpt_separator: <!--more-->
 author: Matt
-thumnail_video: "https://vimeo.com/155578810"
+thumnail_video: https://vimeo.com/155578810
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut vehicula arcu. Curabitur ultricies lacus hendrerit nulla rutrum, sit amet rhoncus nibh venenatis. .
