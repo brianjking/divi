@@ -40,79 +40,79 @@ body_class: blog-masonry
                      {% capture article %}
                      <article class="et_pb_post post type-post status-publish format-standard has-post-thumbnail hentry category-photography">
 
-                        {% if post.thumnail_carousel %}
-                           <!-- carousel : items {{ post.carousel.size }} -->
+                        {% if page.thumnail_carousel %}
+                           <!-- carousel : items {{ page.carousel.size }} -->
                               <div class="et_pb_slider et_pb_slider_fullwidth_off et_pb_gallery_post_type et_slide_transition_to_next et_pb_bg_layout_light">
                                  <div class="et_pb_slides">
-                                    {% for image in post.thumnail_carousel %}
+                                    {% for image in page.thumnail_carousel %}
                                        <div class="et_pb_slide" style="background: url({{image}});"></div>'
                                     {% endfor %}
                                  </div>
                               </div>
-                        {% elsif post.thumnail_image %}
+                        {% elsif page.thumnail_image %}
                            <!-- Image -->
                            <div class="et_pb_image_container">
-                              <a href="{{site.baseurl}}{{post.url}}" class="entry-featured-image-url">
-                                 <img src="{{post.thumnail_image}}" width="400" height="250">
+                              <a href="{{site.baseurl}}{{page.url}}" class="entry-featured-image-url">
+                                 <img src="{{page.thumnail_image}}" width="400" height="250">
                               </a>
                            </div>
-                        {% elsif post.thumnail_quote %}
+                        {% elsif page.thumnail_quote %}
                            <div class="et_quote_content et_pb_text_color_light" style="background-color: #9b61dd;">
                               <blockquote>
-                                 <p>“{{post.thumnail_quote[0]}}.”
+                                 <p>“{{page.thumnail_quote[0]}}.”
                                  <br>
                                  <br>
-                                 {% if post.thumnail_quote[1] %} <em>-{{post.thumnail_quote[1]}}</em>{% endif %}
+                                 {% if page.thumnail_quote[1] %} <em>-{{page.thumnail_quote[1]}}</em>{% endif %}
                                  </p>
                               </blockquote>
-                              <a href="{{site.baseurl}}{{post.url}}" class="et_quote_main_link">Read more</a>
+                              <a href="{{site.baseurl}}{{page.url}}" class="et_quote_main_link">Read more</a>
                            </div>
-                        {% elsif post.thumnail_video %}
+                        {% elsif page.thumnail_video %}
       							<div class="et_main_video_container">
       								<div class="fluid-width-video-wrapper" style="padding-top: 58.3333%;">
-      									{% if post.thumnail_video contains "youtu" %}
-      										{% assign _youtube_id = post.thumnail_video | split: "/" | last %}
+      									{% if page.thumnail_video contains "youtu" %}
+      										{% assign _youtube_id = page.thumnail_video | split: "/" | last %}
       										<iframe src="https://www.youtube.com/embed/{{_youtube_id}}?feature=oembed&amp;amp;wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
       									{% endif %}
-      									{% if post.thumnail_video contains "vimeo" %}
-      										{% assign _vimeo_id = post.thumnail_video | split: "/" | last %}
+      									{% if page.thumnail_video contains "vimeo" %}
+      										{% assign _vimeo_id = page.thumnail_video | split: "/" | last %}
       										<iframe src="https://player.vimeo.com/video/{{_vimeo_id}}?wmode=opaque" frameborder="0" title="Bat.tutty.ry" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" ></iframe>
       									{% endif %}
       								</div>
       							</div>
-                        {% elsif post.thumnail_link %}
+                        {% elsif page.thumnail_link %}
                            <div class="et_link_content et_pb_text_color_light">
-                              <h2><a href="{{post.thumnail_link}}" target="_blank">{{ post.title }}</a></h2>
-                              <a href="{{post.thumnail_link}}" class="et_link_main_url" target="_blank">{{post.thumnail_link}}</a>
+                              <h2><a href="{{page.thumnail_link}}" target="_blank">{{ page.title }}</a></h2>
+                              <a href="{{page.thumnail_link}}" class="et_link_main_url" target="_blank">{{page.thumnail_link}}</a>
                            </div>
                         {% endif %}
                         
-                        {% unless post.thumnail_link %}
-                        <h2 class="entry-title"><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
+                        {% unless page.thumnail_link %}
+                        <h2 class="entry-title"><a href="{{site.baseurl}}{{page.url}}">{{ page.title }}</a></h2>
                         <p class="post-meta">
                         {% endunless %}
 
-                        {% if post.author %}
-                           by <span class="author vcard"><a href="#author-link" title="Posts by {{ post.author }}">{{ post.author }}</a></span>
+                        {% if page.author %}
+                           by <span class="author vcard"><a href="#author-link" title="Posts by {{ page.author }}">{{ page.author }}</a></span>
                         {% endif %}
 
-                        {% if post.author and post.date %}|{% endif %}
+                        {% if page.author and page.date %}|{% endif %}
 
-                        {% if post.date %}
-                           <span class="published">{{ post.date | date: '%B %d, %Y' }}</span>
+                        {% if page.date %}
+                           <span class="published">{{ page.date | date: '%B %d, %Y' }}</span>
                         {% endif %}
 
-                        {% if post.date and post.category %}|{% endif %}
+                        {% if page.date and page.category %}|{% endif %}
 
-                        {% if post.category %}
-                           {% for post_cat in post.category %}
+                        {% if page.category %}
+                           {% for post_cat in page.category %}
                               <a href="#category-link" rel="category tag">{{ post_cat }}</a>
                               {% if forloop.index != forloop.length  %},{% endif %}
                            {% endfor %}
                         {% endif %}
 
                         </p>
-                        <p>{{ post.excerpt }}</p>
+                        <p>{{ page.excerpt }}</p>
                      </article>
                      {% endcapture %}
 
