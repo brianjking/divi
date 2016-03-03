@@ -66,12 +66,13 @@ body_class: blog-masonry
             {% endfor %}
          </div>
       </div>
-{% else %}
-                        <!-- Image -->
-                        <div class="et_pb_image_container">
-                           <a href="http://www.elegantthemes.com/preview/Divi/rocky-formations/" class="entry-featured-image-url">
-                              <img src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/dessert-rocks-400x250.jpg" alt="Rocky Formations" width="400" height="250">                                            </a>
-                        </div>
+{% elsif post.thumnail %}
+   <!-- Image -->
+   <div class="et_pb_image_container">
+      <a href="{{page.url}}" class="entry-featured-image-url">
+         <img src="{{post.thumnail}}" width="400" height="250">
+      </a>
+   </div>
 {% endif %}
                         <h2 class="entry-title"><a href="{{page.url}}">{{ post.title }}</a></h2>
                         <p class="post-meta">
