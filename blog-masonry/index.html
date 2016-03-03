@@ -86,12 +86,14 @@ body_class: blog-masonry
    </div>
 {% elsif post.thumnail_link %}
    <div class="et_link_content et_pb_text_color_light">
-      <h2><a href="{{post.thumnail_link[1]}}">{{post.thumnail_link[0]}}</a></h2>
-      <a href="{{post.thumnail_link[1]}}" class="et_link_main_url">{{post.thumnail_link[1]}}</a>
+      <h2><a href="{{post.thumnail_link}}" target="_blank">{{ post.title }}</a></h2>
+      <a href="{{post.thumnail_link}}" class="et_link_main_url" target="_blank">{{post.thumnail_link}}</a>
    </div>
 {% endif %}
+                        {% unless post.thumnail_link %}
                         <h2 class="entry-title"><a href="{{page.url}}">{{ post.title }}</a></h2>
                         <p class="post-meta">
+                        {% endunless %}
 
                         {% if post.author %}
                            by <span class="author vcard"><a href="#author-link" title="Posts by Nick">{{ post.author }}</a></span>
