@@ -3,7 +3,6 @@ layout: divi
 sidebar: false
 header_type: 'default'
 boxed_layout: false
-title: Post
 body_class: post
 ---
 
@@ -12,20 +11,26 @@ body_class: post
       <div id="left-area">
          <article id="post-4730" class="et_pb_post post-4730 post type-post status-publish format-gallery has-post-thumbnail hentry category-photography post_format-post-format-gallery">
             <div class="et_post_meta_wrapper">
-               <h1 class="entry-title">{{page.basename}}</h1>
-               <p class="post-meta"> by <span class="author vcard"><a href="http://www.elegantthemes.com/preview/Divi/author/admin/" title="Posts by Nick" rel="author">Nick</a></span> | <span class="published">May 9, 2014</span> | <a href="http://www.elegantthemes.com/preview/Divi/category/photography/" rel="category tag">Photography</a> | <span class="comments-number"><a href="http://www.elegantthemes.com/preview/Divi/a-stroll-through-nature/#respond">5 comments</a></span></p>
-               <!--
-               <ul class="et_post_gallery clearfix">
-                  <li class="et_gallery_item">
-                     <a href="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/macarons2.jpg" title="Tea Cup Packaging">
-                     <span class="et_portfolio_image">
-                     <img width="400" height="284" src="http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/macarons2-400x284.jpg" class="attachment-et-pb-portfolio-image size-et-pb-portfolio-image">
-                     <span class="et_overlay"></span>
-                     </span>
-                     </a>
-                  </li>
-               </ul>
-               -->
+               <h1 class="entry-title">{{page.title}}</h1>
+               <p class="post-meta"> 
+					{% if page.author %}
+						by <span class="author vcard"><a href="#author-link" title="Posts by {{ page.author }}">{{ page.author }}</a></span>
+                    {% endif %}
+
+					{% if page.author and page.date %}|{% endif %}
+
+					{% if page.date %}
+						<span class="published">{{ page.date | date: '%B %d, %Y' }}</span>
+					{% endif %}
+
+					{% if page.date and page.category %}|{% endif %}
+
+					{% if page.category %}
+						{% for post_cat in page.category %}
+							<a href="#category-link" rel="category tag">{{ post_cat }}</a>
+							{% if forloop.index != forloop.length  %},{% endif %}
+						{% endfor %}
+					{% endif %}
             </div>
             <!-- .et_post_meta_wrapper -->
             <div class="entry-content">
