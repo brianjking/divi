@@ -72,7 +72,7 @@ body_class: blog-masonry
                            <span class="published">{{ post.date | date: "%D" }}</span>
                         {% endif %}
 
-                        {% if post.category.size > 0 %}
+                        {% if post.category > 0 %}
                            tiene categorias
                         {% endif %}
 
