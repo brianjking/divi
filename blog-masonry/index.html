@@ -38,7 +38,7 @@ body_class: blog-masonry
                      {% if _loop == 3 %}
                         {% capture _col_3 %}
                            {{ _col_3 }}
-                           <!-- col {{_loop}} -->
+                           <!-- loop {{ forloop.index }} -->
                            {{_loop}}
                         {% endcapture %}
 
@@ -46,7 +46,7 @@ body_class: blog-masonry
 
                         {% capture _col_2 %}
                            {{ _col_2 }}
-                           <!-- col {{_loop}} -->
+                           <!-- loop {{ forloop.index }} -->
                            {{_loop}}
                         {% endcapture %}
 
@@ -54,7 +54,7 @@ body_class: blog-masonry
 
                         {% capture _col_1 %}
                            {{ _col_1 }}
-                           <!-- col {{_loop}} -->
+                           <!-- loop {{ forloop.index }} -->
                            {{_loop}}
                         {% endcapture %}
 
