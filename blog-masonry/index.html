@@ -36,10 +36,9 @@ body_class: blog-masonry
                   {% for post in _posts %}
                      {% assign _loop = _loop | plus: 1 }}
 
-                     {% if _loop == 1 %}
-
-                        {% capture _col_1 %}
-                           {{ _col_1 }}
+                     {% if _loop == 3 %}
+                        {% capture _col_3 %}
+                           {{ _col_3 }}
                            <!-- col {{_loop}} -->
                            {{_loop}}
                         {% endcapture %}
@@ -52,12 +51,14 @@ body_class: blog-masonry
                            {{_loop}}
                         {% endcapture %}
 
-                     {% elsif _loop == 3 %}
-                        {% capture _col_3 %}
-                           {{ _col_3 }}
+                     {% else %}
+
+                        {% capture _col_1 %}
+                           {{ _col_1 }}
                            <!-- col {{_loop}} -->
                            {{_loop}}
                         {% endcapture %}
+
                      {% endif %}
 
                      {% if _loop == 1 or _loop == 2 %}
