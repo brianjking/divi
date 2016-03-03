@@ -51,9 +51,9 @@ body_class: blog-masonry
                   -->        
 
                   {% assign _posts = site.posts %}
-                  {% assign _loop = 0  %}
                   {% for post in _posts %}
-                     {% increment _loop %}
+
+                     {% capture _loop %}{{ _loop | plus:1 }}{% endcapture %}
 
                      {% if _loop == 3 %}
                         {% capture _col_3 %}
@@ -81,9 +81,9 @@ body_class: blog-masonry
                      {% endif %}
 
                      {% if _loop == 1 or _loop == 2 %}
-                        {% increment _loop %}
+                        {% capture _loop %}{{ _loop | plus:1 }}{% endcapture %}
                      {% else %}
-                        {% assign _loop = 0  %}
+                        {% capture _loop %}0{% endcapture %}
                      {% endif %}
 
 
