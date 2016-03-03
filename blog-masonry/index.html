@@ -30,45 +30,6 @@ body_class: blog-masonry
             <div class="et_pb_column et_pb_column_4_4  et_pb_column_0">
                <div class="et_pb_blog_grid_wrapper">
                   <div class="et_pb_blog_grid clearfix et_pb_module et_pb_bg_layout_light  et_pb_blog_0" data-columns="3">
-
-                  {% assign _posts = site.posts %}
-                  {% assign _loop = 0  %}
-                  {% for post in _posts %}
-                     {% increment _loop %}
-
-                     {% if _loop == 3 %}
-                        {% capture _col_3 %}
-                           {{ _col_3 }}
-                           <!-- loop {{ forloop.index }} -->
-                           {{_loop}}
-                        {% endcapture %}
-
-                     {% elsif _loop == 2 %}
-
-                        {% capture _col_2 %}
-                           {{ _col_2 }}
-                           <!-- loop {{ forloop.index }} -->
-                           {{_loop}}
-                        {% endcapture %}
-
-                     {% else %}
-
-                        {% capture _col_1 %}
-                           {{ _col_1 }}
-                           <!-- loop {{ forloop.index }} -->
-                           {{_loop}}
-                        {% endcapture %}
-
-                     {% endif %}
-
-                     {% if _loop == 1 or _loop == 2 %}
-                        {% increment _loop %}
-                     {% else %}
-                        {% assign _loop = 0  %}
-                     {% endif %}
-
-
-                  {% endfor %}
 					    
                   <!--
                      <article class="et_pb_post post type-post status-publish format-standard has-post-thumbnail hentry category-photography">
@@ -88,6 +49,45 @@ body_class: blog-masonry
                         <p>{{ post.excerpt }}</p>
                      </article>
                   -->        
+
+                  {% assign _posts = site.posts %}
+                  {% assign _loop = 0  %}
+                  {% for post in _posts %}
+                     {% increment _loop %}
+
+                     {% if _loop == 3 %}
+                        {% capture _col_3 %}
+                           {{ _col_3 }}
+                           <!-- loop {{ forloop.index }} -->
+                           <p>El loop tiene valor : {{_loop}}</p>
+                        {% endcapture %}
+
+                     {% elsif _loop == 2 %}
+
+                        {% capture _col_2 %}
+                           {{ _col_2 }}
+                           <!-- loop {{ forloop.index }} -->
+                           <p>El loop tiene valor : {{_loop}}</p>
+                        {% endcapture %}
+
+                     {% else %}
+
+                        {% capture _col_1 %}
+                           {{ _col_1 }}
+                           <!-- loop {{ forloop.index }} -->
+                           <p>El loop tiene valor : {{_loop}}</p>
+                        {% endcapture %}
+
+                     {% endif %}
+
+                     {% if _loop == 1 or _loop == 2 %}
+                        {% increment _loop %}
+                     {% else %}
+                        {% assign _loop = 0  %}
+                     {% endif %}
+
+
+                  {% endfor %}
 
                   <div class="column size-1of3">
                      {{ _col_1 }}
