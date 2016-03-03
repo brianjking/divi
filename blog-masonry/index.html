@@ -58,15 +58,14 @@ body_class: blog-masonry
                      {% capture article %}
                      <article class="et_pb_post post type-post status-publish format-standard has-post-thumbnail hentry category-photography">
 {% if post.carousel %}
-   <!-- carousel -->
-   <div class="et_pb_slider et_pb_slider_fullwidth_off et_pb_gallery_post_type et_slide_transition_to_next et_pb_bg_layout_light">
-      <div class="et_pb_slides">
-         <div class="et_pb_slide" style="z-index: 1; display: none; opacity: 0; background: url(&quot;http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/macarons2.jpg&quot;);"></div>
-         <div class="et_pb_slide et-pb-moved-slide" style="z-index: 2; display: none; opacity: 0; background: url(&quot;http://www.elegantthemes.com/preview/Divi/wp-content/uploads/2014/04/macarons1.jpg&quot;);"></div>
+   <!-- carousel : items {{ post.carousel.size }} -->
+      <div class="et_pb_slider et_pb_slider_fullwidth_off et_pb_gallery_post_type et_slide_transition_to_next et_pb_bg_layout_light">
+         <div class="et_pb_slides">
+            {% for image in post.carousel %}
+                     <div class="et_pb_slide" style="background: url({{image}});"></div>'
+            {% endfor %}
+         </div>
       </div>
-      <div class="et-pb-slider-arrows"><a class="et-pb-arrow-prev" href="#" style="color: inherit;"><span>Previous</span></a><a class="et-pb-arrow-next" href="#" style="color: inherit;"><span>Next</span></a></div>
-      <div class="et-pb-controllers"><a href="#" class="">1</a><a href="#" class="">2</a><a href="#" class="et-pb-active-control">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a></div>
-   </div>
 {% else %}
                         <!-- Image -->
                         <div class="et_pb_image_container">
