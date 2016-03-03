@@ -1,4 +1,5 @@
 ---
+layout: post
 excerpt_separator: <!--more-->
 author: Matt
 thumnail_video: https://vimeo.com/155578810

@@ -1,4 +1,5 @@
 ---
+layout: post
 excerpt_separator: <!--more-->
 author: Christian López
 thumnail_video: https://youtu.be/rOZL8y_zvG8

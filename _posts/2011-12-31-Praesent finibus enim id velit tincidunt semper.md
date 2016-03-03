@@ -1,4 +1,5 @@
 ---
+layout: post
 excerpt_separator: <!--more-->
 author: Christian López
 category: ["Marketing"]

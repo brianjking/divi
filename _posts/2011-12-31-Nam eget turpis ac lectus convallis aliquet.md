@@ -1,4 +1,5 @@
 ---
+layout: post
 excerpt_separator: <!--more-->
 author: Matt
 category: [	"Startups"]

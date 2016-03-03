@@ -1,4 +1,5 @@
 ---
+layout: post
 excerpt_separator: <!--more-->
 author: Matt
 category: ["B2C","B2B","Marketing"]
