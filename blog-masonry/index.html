@@ -79,7 +79,7 @@ body_class: blog-masonry
                         {% if post.category %}
                            {% for post_cat in post.category %}
                               <a href="#category-link" rel="category tag">{{ post_cat }}</a>
-                              {% if loop_index > 1 %},{% endif %}
+                              {% if forloop.index != forloop.length  %},{% endif %}
                            {% endfor %}
                         {% endif %}
 
