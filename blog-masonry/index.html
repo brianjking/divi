@@ -63,10 +63,21 @@ body_class: blog-masonry
                         </div>
                         <h2 class="entry-title"><a href="{{page.url}}">{{ post.title }}</a></h2>
                         <p class="post-meta">
-   
-   by <span class="author vcard"><a href="http://www.elegantthemes.com/preview/Divi/author/admin/" title="Posts by Nick">{{ post.author }}</a></span>|  
-   <span class="published">{{ post.date }}</span>|
-   <a href="http://www.elegantthemes.com/preview/Divi/category/photography/" rel="category tag">Photography</a>
+
+                        {% if post.author %}
+                           by <span class="author vcard"><a href="#author-link" title="Posts by Nick">{{ post.author }}</a></span>|
+                        {% endif %}
+
+                        {% if post.date %}
+                           <span class="published">{{ post.date | date: "%D" }}</span>|
+                        {% endif %}
+
+                        {% if post.category %}
+                           {% for cat in post.category %}
+                              <a href="#category-link" rel="category tag">{{ cat[0] }}</a> 
+                           {% endfor %}
+                        {% endif %}
+
                         </p>
                         <p>{{ post.excerpt }}</p>
                      </article>
