@@ -35,15 +35,15 @@ body_class: blog-masonry
                   {% assign _loop = 0  %}
                   {% for post in _posts %}
                      {% increment _loop %}
-                     
-                     {% if temp == 3 %}
+
+                     {% if _loop == 3 %}
                         {% capture _col_3 %}
                            {{ _col_3 }}
                            <!-- loop {{ forloop.index }} -->
                            {{_loop}}
                         {% endcapture %}
 
-                     {% elsif temp == 2 %}
+                     {% elsif _loop == 2 %}
 
                         {% capture _col_2 %}
                            {{ _col_2 }}
@@ -61,11 +61,9 @@ body_class: blog-masonry
 
                      {% endif %}
 
-                     {% if _loop == 1 %}
+                     {% if _loop == 1 or _loop == 2 %}
                         {% increment _loop %}
-                     {% elsif _loop == 2 %}
-                        {% increment _loop %}
-                     {% elsif _loop == 3 %}
+                     {% else %}
                         {% assign _loop = 0  %}
                      {% endif %}
 
