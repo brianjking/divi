@@ -57,39 +57,52 @@ body_class: blog-masonry
 
                      {% capture article %}
                      <article class="et_pb_post post type-post status-publish format-standard has-post-thumbnail hentry category-photography">
-{% if post.thumnail_carousel %}
-   <!-- carousel : items {{ post.carousel.size }} -->
-      <div class="et_pb_slider et_pb_slider_fullwidth_off et_pb_gallery_post_type et_slide_transition_to_next et_pb_bg_layout_light">
-         <div class="et_pb_slides">
-            {% for image in post.thumnail_carousel %}
-               <div class="et_pb_slide" style="background: url({{image}});"></div>'
-            {% endfor %}
-         </div>
-      </div>
-{% elsif post.thumnail_image %}
-   <!-- Image -->
-   <div class="et_pb_image_container">
-      <a href="{{page.url}}" class="entry-featured-image-url">
-         <img src="{{post.thumnail_image}}" width="400" height="250">
-      </a>
-   </div>
-{% elsif post.thumnail_quote %}
-   <div class="et_quote_content et_pb_text_color_light" style="background-color: #9b61dd;">
-      <blockquote>
-         <p>“{{post.thumnail_quote[0]}}.”
-         <br>
-         <br>
-         {% if post.thumnail_quote[1] %} <em>-{{post.thumnail_quote[1]}}</em>{% endif %}
-         </p>
-      </blockquote>
-      <a href="{{page.url}}" class="et_quote_main_link">Read more</a>
-   </div>
-{% elsif post.thumnail_link %}
-   <div class="et_link_content et_pb_text_color_light">
-      <h2><a href="{{post.thumnail_link}}" target="_blank">{{ post.title }}</a></h2>
-      <a href="{{post.thumnail_link}}" class="et_link_main_url" target="_blank">{{post.thumnail_link}}</a>
-   </div>
-{% endif %}
+
+                        {% if post.thumnail_carousel %}
+                           <!-- carousel : items {{ post.carousel.size }} -->
+                              <div class="et_pb_slider et_pb_slider_fullwidth_off et_pb_gallery_post_type et_slide_transition_to_next et_pb_bg_layout_light">
+                                 <div class="et_pb_slides">
+                                    {% for image in post.thumnail_carousel %}
+                                       <div class="et_pb_slide" style="background: url({{image}});"></div>'
+                                    {% endfor %}
+                                 </div>
+                              </div>
+                        {% elsif post.thumnail_image %}
+                           <!-- Image -->
+                           <div class="et_pb_image_container">
+                              <a href="{{page.url}}" class="entry-featured-image-url">
+                                 <img src="{{post.thumnail_image}}" width="400" height="250">
+                              </a>
+                           </div>
+                        {% elsif post.thumnail_quote %}
+                           <div class="et_quote_content et_pb_text_color_light" style="background-color: #9b61dd;">
+                              <blockquote>
+                                 <p>“{{post.thumnail_quote[0]}}.”
+                                 <br>
+                                 <br>
+                                 {% if post.thumnail_quote[1] %} <em>-{{post.thumnail_quote[1]}}</em>{% endif %}
+                                 </p>
+                              </blockquote>
+                              <a href="{{page.url}}" class="et_quote_main_link">Read more</a>
+                           </div>
+                        {% elsif post.thumnail_video %}
+							<div class="et_main_video_container">
+								<div class="fluid-width-video-wrapper">
+									{% if post.thumnail_video contains "youtu" %}
+										<iframe src="{{post.thumnail_video}}?feature=oembed&amp;amp;wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
+									{% endif %}
+									{% if post.thumnail_video contains "vimeo" %}
+										<iframe src="{{post.thumnail_video}}?wmode=opaque" frameborder="0" title="Bat.tutty.ry" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" id="fitvid1"></iframe>
+									{% endif %}
+								</div>
+							</div>
+                        {% elsif post.thumnail_link %}
+                           <div class="et_link_content et_pb_text_color_light">
+                              <h2><a href="{{post.thumnail_link}}" target="_blank">{{ post.title }}</a></h2>
+                              <a href="{{post.thumnail_link}}" class="et_link_main_url" target="_blank">{{post.thumnail_link}}</a>
+                           </div>
+                        {% endif %}
+                        
                         {% unless post.thumnail_link %}
                         <h2 class="entry-title"><a href="{{page.url}}">{{ post.title }}</a></h2>
                         <p class="post-meta">
