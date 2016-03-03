@@ -30,7 +30,7 @@ body_class: blog-masonry
             <div class="et_pb_column et_pb_column_4_4  et_pb_column_0">
                <div class="et_pb_blog_grid_wrapper">
                   <div class="et_pb_blog_grid clearfix et_pb_module et_pb_bg_layout_light  et_pb_blog_0" data-columns="3">
-					    
+
 
                   {% assign _posts = site.posts %}
                   {% for post in _posts %}
@@ -52,7 +52,7 @@ body_class: blog-masonry
                         {% elsif post.thumnail_image %}
                            <!-- Image -->
                            <div class="et_pb_image_container">
-                              <a href="{{page.url}}" class="entry-featured-image-url">
+                              <a href="{{post.url}}" class="entry-featured-image-url">
                                  <img src="{{post.thumnail_image}}" width="400" height="250">
                               </a>
                            </div>
@@ -65,7 +65,7 @@ body_class: blog-masonry
                                  {% if post.thumnail_quote[1] %} <em>-{{post.thumnail_quote[1]}}</em>{% endif %}
                                  </p>
                               </blockquote>
-                              <a href="{{page.url}}" class="et_quote_main_link">Read more</a>
+                              <a href="{{post.url}}" class="et_quote_main_link">Read more</a>
                            </div>
                         {% elsif post.thumnail_video %}
 							<div class="et_main_video_container">
