@@ -87,7 +87,7 @@ body_class: blog-masonry
                            </div>
                         {% elsif post.thumnail_video %}
 							<div class="et_main_video_container">
-								<div class="fluid-width-video-wrapper">
+								<div class="fluid-width-video-wrapper" style="padding-top: 58.3333%;">
 									{% if post.thumnail_video contains "youtu" %}
 										{% assign _youtube_id = post.thumnail_video | split: "/" | last %}
 										<iframe src="https://www.youtube.com/embed/{{_youtube_id}}?feature=oembed&amp;amp;wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
