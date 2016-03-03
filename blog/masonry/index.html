@@ -99,7 +99,7 @@ body_class: blog-masonry
                         {% if post.author and post.date %}|{% endif %}
 
                         {% if post.date %}
-                           <span class="published">{{ page.date | date: '%B %d, %Y' }}</span>
+                           <span class="published">{{ post.date | date: '%B %d, %Y' }}</span>
                         {% endif %}
 
                         {% if post.date and post.category %}|{% endif %}
