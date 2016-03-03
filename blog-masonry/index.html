@@ -59,7 +59,7 @@ body_class: blog-masonry
                         {% capture _col_3 %}
                            {{ _col_3 }}
                            <!-- Col 03 : loop {{ forloop.index }} -->
-                           <p>El loop tiene valor : {{_loop}}</p>
+                           <p>El loop : {{_loop}}</p>
                         {% endcapture %}
 
                      {% elsif _loop == 2 %}
@@ -67,7 +67,7 @@ body_class: blog-masonry
                         {% capture _col_2 %}
                            {{ _col_2 }}
                            <!-- Col 02 : loop {{ forloop.index }} -->
-                           <p>El loop tiene valor : {{_loop}}</p>
+                           <p>El loop : {{_loop}}</p>
                         {% endcapture %}
 
                      {% else %}
@@ -75,7 +75,7 @@ body_class: blog-masonry
                         {% capture _col_1 %}
                            {{ _col_1 }}
                            <!-- Col 01 : loop {{ forloop.index }} -->
-                           <p>El loop tiene valor : {{_loop}}</p>
+                           <p>El loop : {{_loop}}</p>
                         {% endcapture %}
 
                      {% endif %}
