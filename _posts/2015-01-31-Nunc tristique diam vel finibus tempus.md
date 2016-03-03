@@ -1,5 +1,7 @@
 ---
 excerpt_separator: <!--more-->
+author: Christian López
+category: [	"Tech",	"Marketing"]
 link: https://www.google.es/
 ---
 

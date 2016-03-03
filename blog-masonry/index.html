@@ -67,14 +67,19 @@ body_class: blog-masonry
                         {% if post.author %}
                            by <span class="author vcard"><a href="#author-link" title="Posts by Nick">{{ post.author }}</a></span>
                         {% endif %}
+
                         {% if post.author and post.date %}|{% endif %}
+
                         {% if post.date %}
                            <span class="published">{{ post.date | date: "%D" }}</span>
                         {% endif %}
 
+                        {% if post.date and post.category %}|{% endif %}
+
                         {% if post.category %}
                            {% for post_cat in post.category %}
-                              <a href="#category-link" rel="category tag">{{ post_cat }}</a> 
+                              <a href="#category-link" rel="category tag">{{ post_cat }}</a>
+                              {% if loop_index > 1 %},{% endif %}
                            {% endfor %}
                         {% endif %}
 

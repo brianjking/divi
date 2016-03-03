@@ -1,5 +1,7 @@
 ---
 excerpt_separator: <!--more-->
+author: Matt
+category: [	"Startups"]
 ---
 
 Lorem ipsum dolor sit amet, ac accumsan mi fringilla sed. Proin ut libero vitae nibh mollis ornare eget vitae ante. Cras quam diam, vulputate eget tellus non, volutpat pharetra enim.

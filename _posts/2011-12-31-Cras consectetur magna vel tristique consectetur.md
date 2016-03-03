@@ -1,5 +1,7 @@
 ---
 excerpt_separator: <!--more-->
+author: Matt
+category: [	"Startups", "Social"]
 youtube: https://youtu.be/rOZL8y_zvG8
 ---
 
