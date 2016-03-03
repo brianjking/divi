@@ -2,8 +2,7 @@
 excerpt_separator: <!--more-->
 author: Christian López
 category: [	"Tech",	"Social" , "Marketing"]
-
-thumnail_carousel: [	"https://pixabay.com/static/uploads/photo/2016/03/01/23/52/car-window-1231472_960_720.jpg",	"https://pixabay.com/static/uploads/photo/2016/02/29/22/02/wall-1229315_960_720.jpg"]
+thumnail_carousel: ["https://pixabay.com/static/uploads/photo/2016/03/01/23/52/car-window-1231472_960_720.jpg",	"https://pixabay.com/static/uploads/photo/2016/02/29/22/02/wall-1229315_960_720.jpg"]
 
 ---
 

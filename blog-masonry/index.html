@@ -61,8 +61,8 @@ body_class: blog-masonry
    <!-- carousel : items {{ post.carousel.size }} -->
       <div class="et_pb_slider et_pb_slider_fullwidth_off et_pb_gallery_post_type et_slide_transition_to_next et_pb_bg_layout_light">
          <div class="et_pb_slides">
-            {% for image in post.carousel %}
-                     <div class="et_pb_slide" style="background: url({{image}});"></div>'
+            {% for image in post.thumnail_carousel %}
+               <div class="et_pb_slide" style="background: url({{image}});"></div>'
             {% endfor %}
          </div>
       </div>
