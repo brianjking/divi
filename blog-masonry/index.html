@@ -57,7 +57,7 @@ body_class: blog-masonry
 
                      {% capture article %}
                      <article class="et_pb_post post type-post status-publish format-standard has-post-thumbnail hentry category-photography">
-{% if post.carousel %}
+{% if post.thumnail_carousel %}
    <!-- carousel : items {{ post.carousel.size }} -->
       <div class="et_pb_slider et_pb_slider_fullwidth_off et_pb_gallery_post_type et_slide_transition_to_next et_pb_bg_layout_light">
          <div class="et_pb_slides">
@@ -66,11 +66,23 @@ body_class: blog-masonry
             {% endfor %}
          </div>
       </div>
-{% elsif post.thumnail %}
+
+{% elsif post.thumnail_quote %}
+   <div class="et_quote_content et_pb_text_color_light" style="background-color: #9b61dd;">
+      <blockquote>
+         <p>“{{post.thumnail_quote[0]}}.”
+         <br>
+         <br>
+         {% if post.thumnail_quote[1] %} <em>-{{post.thumnail_quote[1]}}</em>{% endif %}
+         </p>
+      </blockquote>
+      <a href="{{page.url}}" class="et_quote_main_link">Read more</a>
+   </div>
+{% elsif post.thumnail_image %}
    <!-- Image -->
    <div class="et_pb_image_container">
       <a href="{{page.url}}" class="entry-featured-image-url">
-         <img src="{{post.thumnail}}" width="400" height="250">
+         <img src="{{post.thumnail_image}}" width="400" height="250">
       </a>
    </div>
 {% endif %}

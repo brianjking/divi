@@ -2,7 +2,7 @@
 excerpt_separator: <!--more-->
 author: Matt
 category: ["B2C","B2B","Marketing"]
-thumnail: "https://pixabay.com/static/uploads/photo/2016/02/29/18/00/beach-1228947_960_720.jpg"
+thumnail_image: "https://pixabay.com/static/uploads/photo/2016/02/29/18/00/beach-1228947_960_720.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut vehicula arcu. Curabitur ultricies lacus hendrerit nulla rutrum, sit amet rhoncus nibh venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec cursus arcu mi, sit amet suscipit enim facilisis ac. Fusce condimentum vestibulum velit.

@@ -1,7 +1,8 @@
 ---
 excerpt_separator: <!--more-->
 author: Matt
-category: [	"Startups", "Social"]
+category: ["Startups", "Social"]
+thumnail_quote: ["You can design and create, and build the most wonderful place in the world. But it takes people to make the dream a reality.", "Walt Disney"]
 ---
 
 Lorem ipsum dolor sit amet, ac accumsan mi fringilla sed. Proin ut libero vitae nibh mollis ornare eget vitae ante. Cras quam diam, vulputate eget tellus non, volutpat pharetra enim.
