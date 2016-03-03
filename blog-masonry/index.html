@@ -80,11 +80,9 @@ body_class: blog-masonry
 
                      {% endif %}
 
-                     {% if _loop == 1 or _loop == 2 %}
-                        {% capture _loop %}{{ _loop | plus:1 }}{% endcapture %}
-                     {% else %}
+                     {% if _loop == 3 %}
                         {% capture _loop %}0{% endcapture %}
-                     {% endif %}
+                     {% else %}
 
                   {% endfor %}
 
