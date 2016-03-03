@@ -66,7 +66,13 @@ body_class: blog-masonry
             {% endfor %}
          </div>
       </div>
-
+{% elsif post.thumnail_image %}
+   <!-- Image -->
+   <div class="et_pb_image_container">
+      <a href="{{page.url}}" class="entry-featured-image-url">
+         <img src="{{post.thumnail_image}}" width="400" height="250">
+      </a>
+   </div>
 {% elsif post.thumnail_quote %}
    <div class="et_quote_content et_pb_text_color_light" style="background-color: #9b61dd;">
       <blockquote>
@@ -78,12 +84,10 @@ body_class: blog-masonry
       </blockquote>
       <a href="{{page.url}}" class="et_quote_main_link">Read more</a>
    </div>
-{% elsif post.thumnail_image %}
-   <!-- Image -->
-   <div class="et_pb_image_container">
-      <a href="{{page.url}}" class="entry-featured-image-url">
-         <img src="{{post.thumnail_image}}" width="400" height="250">
-      </a>
+{% elsif post.thumnail_link %}
+   <div class="et_link_content et_pb_text_color_light">
+      <h2><a href="{{post.thumnail_link[1]}}">{{post.thumnail_link[0]}}</a></h2>
+      <a href="{{post.thumnail_link[1]}}" class="et_link_main_url">{{post.thumnail_link[1]}}</a>
    </div>
 {% endif %}
                         <h2 class="entry-title"><a href="{{page.url}}">{{ post.title }}</a></h2>
