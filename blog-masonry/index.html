@@ -65,17 +65,15 @@ body_class: blog-masonry
                         <p class="post-meta">
 
                         {% if post.author %}
-                           by <span class="author vcard"><a href="#author-link" title="Posts by Nick">{{ post.author }}</a></span>|
+                           by <span class="author vcard"><a href="#author-link" title="Posts by Nick">{{ post.author }}</a></span>
                         {% endif %}
-
+                        {% if post.author and post.date %}|{% endif %}
                         {% if post.date %}
-                           <span class="published">{{ post.date | date: "%D" }}</span>|
+                           <span class="published">{{ post.date | date: "%D" }}</span>
                         {% endif %}
 
                         {% if post.category.size > 0 %}
-                           {% for post_cat in post.category %}
-                              <a href="#category-link" rel="category tag">{{ post_cat }}</a> 
-                           {% endfor %}
+                           tiene categorias
                         {% endif %}
 
                         </p>
