@@ -55,14 +55,14 @@ body_class: blog-masonry
 
                      {% capture _loop %}{{ _loop | plus:1 }}{% endcapture %}
 
-                     {% if _loop == 3 %}
+                     {% if _loop == '3' %}
                         {% capture _col_3 %}
                            {{ _col_3 }}
                            <!-- Col 03 : loop {{ forloop.index }} -->
                            <p>El loop : {{_loop}}</p>
                         {% endcapture %}
 
-                     {% elsif _loop == 2 %}
+                     {% elsif _loop == '2' %}
 
                         {% capture _col_2 %}
                            {{ _col_2 }}
@@ -80,7 +80,7 @@ body_class: blog-masonry
 
                      {% endif %}
 
-                     {% if _loop == 3 %}
+                     {% if _loop == '3' %}
                         {% capture _loop %}0{% endcapture %}
                      {% endif %}
 
