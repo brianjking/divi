@@ -61,9 +61,11 @@ body_class: blog-masonry
 
                      {% endif %}
 
-                     {% if _loop == 1 or _loop == 2 %}
-                        {% assign _loop = _loop | plus: 1 }}
-                     {% else %}
+                     {% if _loop == 1 %}
+                        {% assign _loop = 2 }}
+                     {% elsif _loop == 2 %}
+                        {% assign _loop = 3 }}
+                     {% elsif _loop == 3 %}
                         {% assign _loop = 0  %}
                      {% endif %}
 
