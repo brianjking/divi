@@ -37,11 +37,6 @@ body_class: blog-masonry
                      {% assign _loop = _loop | plus: 1 }}
 
 
-                     {% if _loop == 1 or _loop == 2 %}
-                        {% assign _loop = _loop | plus: 1 }}
-                     {% else %}
-                        {% assign _loop = 0  %}
-                     {% endif %}
 
                   {% endfor %}
 					    
@@ -65,13 +60,10 @@ body_class: blog-masonry
                   -->        
 
                   <div class="column size-1of3">
-                     {{ _col_1 }}        
                   </div>
                   <div class="column size-1of3"> 
-                     {{ _col_2 }}                
                   </div>
                   <div class="column size-1of3"> 
-                     {{ _col_3 }}                
                   </div>
 
                   </div>
