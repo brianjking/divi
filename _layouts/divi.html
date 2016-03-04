@@ -10,7 +10,7 @@ layout: bare
   <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   
   <!-- Google fonts -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,latin-ext" type="text/css" media="all">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800%7CLato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext" /><link rel='stylesheet' id='font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' type='text/css' media='all' />
 
   <!-- Divi css -->
   <link rel="stylesheet" id="divi-style-css" href="{{ site.baseurl }}/assets/vendor/divi/2.6.4.4/style.css" type="text/css" media="all">
@@ -32,7 +32,8 @@ layout: bare
   <body class=" 
   {% if page.body_class %}{{ page.body_class }}{% endif %} 
   page-template-default 
-  custom-background 
+  custom-background
+  et_color_scheme_red
   et_pb_button_helper_class
   {% if page.header_type == 'vertical' %}  et_vertical_nav et_vertical_fixed  {% else %}  et_fixed_nav  {% endif %}   
   {% if page.boxed_layout == true %}  et_boxed_layout  {% endif %}   
