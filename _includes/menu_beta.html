@@ -106,6 +106,7 @@
 
    {% comment %} Genero las clases para este elemento {% endcomment %}
    {% capture _classes %}
+
       {% if page.url == node.url %}
          selected{{ " " }}
       {% elsif _retval %}
@@ -113,17 +114,11 @@
       {% endif %}
 
       {% if _childmenu != "" %}
+         !{% if include.haschildren %}menu-item-has-children{{ " " }}{% endif %}
          branch{{ " " }}
-         menu-item-has-children
-         branch{{ " " }}
-         {% if _retval or page.url == node.url or include.all %}
-            open   
-         {% else %}
-            closed   
-         {% endif %}
-
+         {% if _retval or page.url == node.url or include.all %}open{{ " " }}{% else %}closed{% endif %}
       {% else %}
-      leaf
+         leaf
       {% endif %}
 
    {% endcapture %}
