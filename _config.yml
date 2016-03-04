@@ -18,9 +18,11 @@ url: 'http://yourdomain.io'
 ##########
 # Social #
 ##########
-#facebook_url: ''
-#twitter_url: ''
-#google_url: ''
+facebook_url: '#'
+twitter_url: '#'
+google_url: '#'
+linkedin_url: '#'
+github_url: '#'
 
 paginate: 5
 paginate_path: "/blog/page-:num/"
