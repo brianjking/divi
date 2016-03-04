@@ -68,18 +68,18 @@ body_class: blog-masonry
                               <a href="{{site.baseurl}}{{post.url}}" class="et_quote_main_link">Read more</a>
                            </div>
                         {% elsif post.thumnail_video %}
-							<div class="et_main_video_container">
-								<div class="fluid-width-video-wrapper" style="padding-top: 58.3333%;">
-									{% if post.thumnail_video contains "youtu" %}
-										{% assign _youtube_id = post.thumnail_video | split: "/" | last %}
-										<iframe src="https://www.youtube.com/embed/{{_youtube_id}}?feature=oembed&amp;amp;wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
-									{% endif %}
-									{% if post.thumnail_video contains "vimeo" %}
-										{% assign _vimeo_id = post.thumnail_video | split: "/" | last %}
-										<iframe src="https://player.vimeo.com/video/{{_vimeo_id}}?wmode=opaque" frameborder="0" title="Bat.tutty.ry" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" ></iframe>
-									{% endif %}
-								</div>
-							</div>
+      							<div class="et_main_video_container">
+      								<div class="fluid-width-video-wrapper" style="padding-top: 58.3333%;">
+      									{% if post.thumnail_video contains "youtu" %}
+      										{% assign _youtube_id = post.thumnail_video | split: "/" | last %}
+      										<iframe src="https://www.youtube.com/embed/{{_youtube_id}}?feature=oembed&amp;amp;wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
+      									{% endif %}
+      									{% if post.thumnail_video contains "vimeo" %}
+      										{% assign _vimeo_id = post.thumnail_video | split: "/" | last %}
+      										<iframe src="https://player.vimeo.com/video/{{_vimeo_id}}?wmode=opaque" frameborder="0" title="Bat.tutty.ry" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" ></iframe>
+      									{% endif %}
+      								</div>
+      							</div>
                         {% elsif post.thumnail_link %}
                            <div class="et_link_content et_pb_text_color_light">
                               <h2><a href="{{post.thumnail_link}}" target="_blank">{{ post.title }}</a></h2>

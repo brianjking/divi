@@ -114,6 +114,8 @@
 
       {% if _childmenu != "" %}
          branch{{ " " }}
+         menu-item-has-children
+         branch{{ " " }}
          {% if _retval or page.url == node.url or include.all %}
             open   
          {% else %}
@@ -127,7 +129,7 @@
    {% endcapture %}
 
    {% comment %} Genero el elemento li {% endcomment %}
-   <li class="{{ _classes }}"><a href="{{ site.baseurl }}{{ node.url }}">{{ node.title | escape }}</a>
+   <li class="menu-item menu-item-type-post_type menu-item-object-page {{ _classes }}"><a href="{{ site.baseurl }}{{ node.url }}">{{ node.title | escape }}</a>
    {{ _childmenu }}
    {% if _retval or page.url == node.url %}{% assign _pass_active = true %}{% endif %}</li>{% endfor %}
 {% endcapture %}
